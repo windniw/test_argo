@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-app
+spec:
+  selector:
+    matchLabels:
+      app: local-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: local-app
+    spec:
+      containers:
+      - name: myapp
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
