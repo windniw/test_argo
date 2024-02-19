@@ -1,4 +1,3 @@
-# deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,17 +17,4 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        
-# service.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: myapp-service
-spec:
-  selector:
-    app: myapp
-  ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
 
