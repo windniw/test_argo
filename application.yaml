@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: luxuan
+  namespace: test-argo
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/windniw/test_argo.git
+    targetRevision: HEAD
+    path: test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-argo
+  syncPolicy:
+    automated: 
+      selfHeal: false
+      prune: false
